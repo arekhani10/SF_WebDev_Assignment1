@@ -1,9 +1,7 @@
 body {
-  background-color: lightblue;
-  font-family: cambria;
-  color: white;
   font-size: 25px;
   margin: 0px;
+  padding: 0px;
   background-image: url('wallpaper.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -14,47 +12,46 @@ h1 {
   font-size: 90px;
   font-family: georgia;
   text-align:center;
-  padding-top:0px;
+  padding-top: 10px;
   margin-top : 0px;
   color: darkblue;
 }
 
 #menu {
   background-color: black;
-  height: 45px;
-  font-size: 30px;
-  width : 100%;
-  font-weight: bold;
+  height: 35px;
   font: helvetica;
 }
 
 #menu ul{
+  width:100%;
   padding: 0;
   margin: 0;
   list-style-type:none;
-  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 #menu li{
-  display:inline;
-  padding:45px;
-  vertical-align: middle;
-  width: 20%;
-  margin: 10 2.5%;
+  display:inline-block;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5px 8px;
+  width: 24%;
+}
+
+#menu li:hover {
+  background-color: grey;
 }
 
 #menu a {
   text-decoration: none;
   color:red;
-  padding-left:20px;
-  padding-right: 20px;
-  height: 100%;
+  padding: 6px 25%;
   vertical-align: middle;
 }
 
-#menu a:hover {
-  background-color: white;
-}
 
 p {
   padding-left: 40px;
@@ -88,17 +85,19 @@ p {
   padding:0;
   margin:0;
   list-style-type: none;
+  white-space: nowrap;
 }
 
 #socials li{
-  display:inline;
-  padding:50px;
-  width:25%;
-  margin: 10px 5%;
+  display:inline-block;
+  padding-left: 60px;
+  padding-right: 20px;
+  vertical-align: center;
+  width:20%;
 }
 
 #socials img{
-  padding:20px;
+  padding: 20px;
 }
 
 #socials a img{
@@ -116,7 +115,8 @@ p {
   color: yellow;
   font-size: 25px;
   padding: 15px;
-  margin-bottom: 15px;
+  margin-top: 30px;
+  margin-bottom: 20px;
   line-height: 1.2em;
 }
 
@@ -199,6 +199,8 @@ p {
   padding: 20px;
   border-radius: 30px;
   border:5px solid black;
+  transition: 0.5s ease;
+  opacity:1;
 }
 
 .row24 img{
@@ -207,4 +209,34 @@ p {
   padding: 10px;
   border-radius: 20px;
   border:5px solid white;
+}
+
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container:hover img {
+  opacity: 0.5;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.container {
+  position: relative;
+  width: 50%;
 }
